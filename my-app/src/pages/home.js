@@ -47,10 +47,8 @@ export default function HomePage() {
         await axios.post("https://proposal-4tui.onrender.com/api/response", {
           answer: `Tried to click on No button ${noCount} times and Hovered on it ${noHovered} times`,
         });
-        alert("Response saved(I might be the happiest guy fr)");
       } catch (error) {
         console.error("Error saving response:", error);
-        alert("An error occurred while saving your response.");
       }
       setYesPressed((prev) => {
         return true;
