@@ -44,9 +44,10 @@ export default function HomePage() {
   const yesClickHandler = async () => {
     if (noCount == 1 || noCount == 3) {
       try {
-        await axios.post("http://localhost:5000/api/response", {
+        await axios.post("https://proposal-4tui.onrender.com/api/response", {
           answer: `Tried to click on No button ${noCount} times and Hovered on it ${noHovered} times`,
         });
+        alert("Response saved(I might be the happiest guy fr)");
       } catch (error) {
         console.error("Error saving response:", error);
         alert("An error occurred while saving your response.");
