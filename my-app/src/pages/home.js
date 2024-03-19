@@ -44,15 +44,13 @@ export default function HomePage() {
   const yesClickHandler = async () => {
     if (noCount == 1 || noCount == 3) {
       try {
+        setYesPressed(true);
         await axios.post("https://proposal-4tui.onrender.com/api/response", {
           answer: `Tried to click on No button ${noCount} times and Hovered on it ${noHovered} times`,
         });
       } catch (error) {
         console.error("Error saving response:", error);
       }
-      setYesPressed((prev) => {
-        return true;
-      });
     }
     if (noCount == 2) {
       setNoCount((noCountTemp) => {
